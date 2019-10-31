@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+            <script src="https://unpkg.com/lodash@4/lodash.min.js"></script>
+            <script src="https://unpkg.com/lowdb@0.17/dist/low.min.js"></script>
+            <script src="https://unpkg.com/lowdb@0.17/dist/LocalStorage.min.js"></script>
+            <script>
+            // local storage 의 db에 lowdb의 데이터를 저장할 것. 그리고 db변수를 통해서 lowdb를 제어한다.
+            var adapter = new LocalStorage('db') // local storage 의 db 라는 곳에 데이터를 저장한다
+            var db = low(adapter) // lowdb를 만드는 함수
+            // db라는 key에 데이터를 저장 할 수 있다.
+              
+            // Set some defaults (required if your JSON file is empty) 정보를 넣을 곳이 지정되어 있지 않으면 자동으로 생성되는곳 .
+            db.defaults({ topic: [], author: []}).write();  // topic(author) 이라는 JSON 파일이 없으면 생성, 그 안에 들어갈 데이터는 배열이다
+            
+            // db.get('author').push({
+            //     id: 1,
+            //     name: 'Hong',
+            //     profile: 'developer'
+            // }).write();
+            
+            // db.get('topic').push({
+            //     id: 1,
+            //     title: 'lowdb',
+            //     description: 'lowdb is...',
+            //     author: 1
+            // }).write();
+            
+            // db.get('topic').push({
+            //     id: 2,
+            //     title: 'mysql',
+            //     description: 'mysql is...',
+            //     author: 1
+            // }).write();
+
+            // console.log(db.get('topic')
+            // .find({title:'lowdb', author: 1})
+            // .value()
+            // );
+
+            // db.get('topic')
+            // .find({id: 2})
+            // .assign({title: 'MySQL & MariaDB'})
+            // .write();
+
+            db.get('topic')
+                .remove({id: 2})
+                .write();
+            </script>
+             
+    </head>
+</html>

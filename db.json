@@ -1,0 +1,28 @@
+{
+  "topic": [
+    {
+      "id": 1,
+      "title": "lowdb",
+      "description": "lowdb is...",
+      "author": 1
+    },
+    {
+      "id": "aGyWgLTeQ",
+      "title": "PostgreSQL",
+      "description": "PostgreSQL is...",
+      "author": "TEZqSGLm"
+    }
+  ],
+  "author": [
+    {
+      "id": 1,
+      "name": "Hong",
+      "profile": "developer"
+    },
+    {
+      "id": "TEZqSGLm",
+      "name": "Jung",
+      "profile": "data scientist"
+    }
+  ]
+}
